@@ -14,7 +14,7 @@ class UI {
                 </div>
                 
                 <div class="card-body">
-                    <h3>${repo.name}</h3>
+                    <h4>${repo.name}</h4>
                     <br>
                     <span class="badge bg-primary">Stars: ${repo.stargazers_count}</span>
                     <span class="badge bg-warning">Watchers: ${repo.watchers_count}</span>
@@ -30,7 +30,7 @@ class UI {
                     <img class="img-fluid mb-2" 
                         src='${profileData.avatar_url}' style="border-radius: 5px">
                     <div class="visit-profile-button" style="text-align: center; margin-top: 10px; height: 80px;">
-                        <a href='${profileData.html_url}' target="_blank" id="visit-profile-button" class="btn btn-outline-dark" style="text-align: center; height: 40px; padding: 8px; width: 130px;">Visit Profile</a>
+                        <a href='${profileData.html_url}' target="_blank" id="visit-profile-button" class="btn btn-outline-dark" style="text-align: center; height: 50px; padding: 14px; width: 150px;">Visit Profile</a>
                     </div>
                 </div>
                 <div class="col-md-9">
@@ -47,6 +47,7 @@ class UI {
                         <li class="list-group-item" style="color: #8C92AC;">Company: ${profileData.company}</li>
                     </ul>
                     <br>
+                    <h2 style="padding-left: 10px; padding-bottom: 15px">Repositories</h2>   
                     ${repoDOM}
                 </div>
             </div>            
