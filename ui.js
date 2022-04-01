@@ -4,10 +4,25 @@ class UI {
     }
 
     showProfile = (profileData, repoData) => {
-        Object.keys(profileData).forEach((info) => { if (profileData[info] === null) profileData[info] = 'Not listed' });
-
-
-
+        Object.keys(profileData).forEach((info) => { if (profileData[info] === null || profileData[info] === '') profileData[info] = 'Not listed' });
+        let repoDOM = '';
+        repoData.forEach((repo) => {
+            repoDOM += `
+            <div class="list-group mb-3" style="width: 100%;">
+                <div class="card-header">
+                    <a href=${repo.html_url} target="_blank" id="visit-profile-button" class="btn btn-outline-light" style="text-align: center; height: 40px; padding: 8px; width: 130px;">Link</a>
+                </div>
+                
+                <div class="card-body">
+                    <h3>${repo.name}</h3>
+                    <br>
+                    <span class="badge bg-primary">Stars: ${repo.stargazers_count}</span>
+                    <span class="badge bg-warning">Watchers: ${repo.watchers_count}</span>
+                    <span class="badge bg-info">Forks: ${repo.forms_count}</span>
+                </div>
+            </div> 
+            `
+        });
         this.profile.innerHTML = `
         <div class="profile" style="padding: 25px;">
             <div class="row">   
@@ -25,12 +40,14 @@ class UI {
                     <span class="badge bg-info">Following: ${profileData.following}</span>
                     <br><br>
                     <ul class="list-group">
-                        <li class="list-group-item" style="color: #8C92AC;">Company: ${profileData.company}</li>
-                        <li class="list-group-item" style="color: #8C92AC;">Blog: ${profileData.blog}</li>
+                        <li class="list-group-item" style="color: #8C92AC;">Name: ${profileData.name}</li>
+                        <li class="list-group-item" style="color: #8C92AC;">Website: ${profileData.blog}</li>
                         <li class="list-group-item" style="color: #8C92AC;">Location: ${profileData.location}</li>
                         <li class="list-group-item" style="color: #8C92AC;">Created: ${profileData.created_at}</li>
                         <li class="list-group-item" style="color: #8C92AC;">Company: ${profileData.company}</li>
                     </ul>
+                    <br>
+                    ${repoDOM}
                 </div>
             </div>            
         </div>
@@ -41,7 +58,7 @@ class UI {
         this.profile.innerHTML = '';
     }
 
-    NotFound = () => {
+    userNotFound = () => {
         this.profile.innerHTML = `
         <div class = "alert-message">
             <div class="alert alert-dismissible alert-danger">
