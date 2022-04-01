@@ -7,10 +7,10 @@ class Github {
     }
 
     getUser = async (user) => {
-        // const profileResponse = await fetch(`https://api.github.com/users/${user}?client_id=${this.clientId}&client_secret=${this.clientSecret}`);
-        // const repoResponse = await fetch(`https://api.github.com/users/${user}/repos?per_page=${this.repos_count}&sort=${this.repos_sort}&client_id=${this.clientId}&client_secret=${this.clientSecret}`)
-        const profileResponse = await fetch(`https://api.github.com/users/gowthaman-01`);
-        const repoResponse = await fetch(`https://api.github.com/users/gowthaman-01/repos`);
+        const profileResponse = await fetch(`https://api.github.com/users/${user}?client_id=${this.clientId}&client_secret=${this.clientSecret}`);
+        const repoResponse = await fetch(`https://api.github.com/users/${user}/repos?per_page=${this.repos_count}&sort=${this.repos_sort}&client_id=${this.clientId}&client_secret=${this.clientSecret}`)
+        // const profileResponse = await fetch(`https://api.github.com/users/gowthaman-01`);
+        // const repoResponse = await fetch(`https://api.github.com/users/gowthaman-01/repos?per_page=5`);
         const profileData = await profileResponse.json();
         const repoData = await repoResponse.json();
         return {
