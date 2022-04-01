@@ -6,13 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="bootstrap.css">
     <title>Github finder</title>
+    <link rel="icon" href="./assets/GitHub-Mark-120px-plus.png" type="image/icon type">
+    
 </head>
 <body>
-    <script src="github.js"></script>
-    <script src="ui.js"></script>
-    <script src="app.js"></script>
-    <script src="https://kit.fontawesome.com/e518154f70.js" crossorigin="anonymous"></script>
-
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
           <a class="navbar-brand" href="#">Github Finder</a>
@@ -20,26 +17,26 @@
     </nav>
 
     <div class="card border-light mb-3" style=>
-        <div class="card-body">
-            <div class="search">
-                <div class="icon">
-                    <i class="fa-solid fa-magnifying-glass"></i>
-                </div>
-                <h3 class="card-title"> Search more than <strong>88M</strong> users </h3>
-            </div>
-          <p class="card-text"> GitHub helps developers store and manage their code, as well as track and control changes to their code. </p>
-        </div>
+      <div class="card-body">
+        <h1 class="card-title"> Search more than <strong>88M</strong> users </h1>
+        <h4 class="card-text"> GitHub helps developers store and manage their code, as well as track and control changes to their code </h4>
       </div>
+    </div>
 
-      <form>
-        <fieldset>  
-          <div class="form-group">
-            <label class="form-label mt-1">Enter a username to fetch user profile and repos</label>
-            <input type="username" class="form-control" id="search" placeholder="Enter username">
-          </div>
-        </fieldset>
-      </form>
+    <div class="form-group">
+      <label class="form-label mt-1">Enter a username to fetch user profile and repos</label>
+      <input type="username" class="form-control" id='search' placeholder="Enter username">
+    </div>
 
-      <p class="footer"> &copy; Github Finder  </p>
+    <div id="profile"></div>
+
+    <div id="repo"></div>
+
+    <p class="footer"> &copy; Github Finder  </p>
+
+    <script src="github.js"></script>
+    <script src="ui.js"></script>
+    <script src="app.js"></script>
+    <script src="https://kit.fontawesome.com/e518154f70.js" crossorigin="anonymous"></script>
 </body>
 </html>
